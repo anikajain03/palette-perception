@@ -33,7 +33,7 @@
   Use the color pickers to select text and background colors.
   
 - **Evaluate Contrast**  
-  As you change colors via the color pickers, the contrast ratio and corresponding status updates automatically. Modify the text type (normal, small heading, or large heading) to test different accessibility thresholds.
+  As you change colors via the color pickers, the contrast ratio and corresponding status updates automatically. Modify the text type via the dropdown to test different accessibility thresholds.
 
 - **Simulate Color Blindness**  
   Select a color blindness type from the dropdown, and adjust the severity using the slider.
@@ -47,13 +47,13 @@
 ## Technologies Used
 
 - **React.js**  
-  For building the user interface and managing state.
+  For building the user interface and managing states.
 
 - **CSS**  
   For responsive and visually appealing styling.
 
 - **WCAG Guidelines**  
-  Contrast calculations and accessibility standards based on the [Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/).
+  For contrast calculations and accessibility standards, which are based on the [Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/).
 
 ## Contact
 
