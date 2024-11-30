@@ -108,7 +108,7 @@ input[type="color"]::-webkit-color-swatch {
     margin-bottom: 1.5rem;
 }
 
-/* dropdown & input styling */
+/* dropdown styling */
 select,
 input[type="range"] {
     width: 100%;
@@ -119,12 +119,6 @@ input[type="range"] {
     background-color: #ffffff;
     transition: border-color 0.2s;
     margin-bottom: 1.5rem;
-}
-
-select:focus,
-input[type="range"]:focus {
-    border-color: #4A90E2;
-    outline: none;
 }
 
 /* section for contrast ratio display */
@@ -145,6 +139,7 @@ input[type="range"]:focus {
     margin-top: 0.5rem;
 }
 
+/* display as green if passing and red if not */
 #contrast-ratio .pass-fail.pass {
     color: green;
 }
