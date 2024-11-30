@@ -33,19 +33,16 @@
   Use the color pickers to select text and background colors.
   
 - **Evaluate Contrast**  
-  Check the displayed contrast ratio and whether it passes WCAG standards. Modify the text type (normal, small heading, or ;arge heading) to test different accessibility thresholds.
+  As you change colors via the color pickers, the contrast ratio and corresponding status updates automatically. Modify the text type (normal, small heading, or large heading) to test different accessibility thresholds.
 
 - **Simulate Color Blindness**  
   Select a color blindness type from the dropdown, and adjust the severity using the slider.
 
 - **Live Preview Changes**  
-  View simulated changes directly in the preview section. Customize the text to better see how your design would look.
-
-- **Custom Text Preview**  
-  Allows users to input custom text for live accessibility evaluation.
+  View color, text, and simulation changes live in the preview section. Customize the text to better see how your design would look.
 
 - **Save and Reset**  
-  Copy the selected hex codes using the **Copy Hex Codes** button. Reset all settings to defaults with the **Reset** button.
+  Copy the selected hex codes or reset all settings to defaults via the corresponding buttons.
 
 ## Technologies Used
 
