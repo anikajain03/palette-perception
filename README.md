@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Palette Perception: Accessibility & Color Contrast Tool
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+*Palette Perception* is an interactive web application designed to enhance accessibility in design by evaluating color contrast and simulating color blindness. The tool ensures compliance with WCAG standards and provides real-time previews to help designers create inclusive color schemes. *Palette Perception* was designed for the purpose of the Software Structures For User Interfaces (SSUI) class at Carnegie Mellon University (CMU).
 
-## Available Scripts
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+1. **Clone the Repository**  
+   ```bash
+   git clone https://github.com/yourusername/palette-perception.git
+   ```
+   
+2. **Navigate to the Project Directory**  
+   ```bash
+   cd palette-perception
+   ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+4. **Run the Application**  
+   Make sure you have [Node.js](https://nodejs.org/) installed. Start the development server:  
+   ```bash
+   npm start
+   ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+5. **Access the Application**  
+   Open your browser and navigate to:  
+   ```
+   http://localhost:3000
+   ```
 
-### `npm test`
+## Usage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Choose Colors**  
+  Use the color pickers to select text and background colors.
+  
+- **Evaluate Contrast**  
+  Check the displayed contrast ratio and whether it passes WCAG standards. Modify the text type (normal, small heading, or ;arge heading) to test different accessibility thresholds.
 
-### `npm run build`
+- **Simulate Color Blindness**  
+  Select a color blindness type from the dropdown, and adjust the severity using the slider.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Live Preview Changes**  
+  View simulated changes directly in the preview section. Customize the text to better see how your design would look.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Custom Text Preview**  
+  Allows users to input custom text for live accessibility evaluation.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Save and Reset**  
+  Copy the selected hex codes using the **Copy Hex Codes** button. Reset all settings to defaults with the **Reset** button.
 
-### `npm run eject`
+## Technologies Used
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **React.js**  
+  For building the user interface and managing state.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **CSS**  
+  For responsive and visually appealing styling.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **WCAG Guidelines**  
+  Contrast calculations and accessibility standards based on the [Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Contact
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For questions or feedback, feel free to reach out to:  
+### Anika Jain
+[LinkedIn](https://www.linkedin.com/in/anikaj2/) | [Email](anikajai@andrew.cmu.edu) | [Portfolio](https://anikaj2.notion.site/)
