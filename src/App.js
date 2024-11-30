@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 
 // helper function to convert hex to RGB
+// uses bit manipulation to convert
 const hexToRgb = (hex) => {
   const bigint = parseInt(hex.slice(1), 16);
   return {
@@ -12,6 +13,7 @@ const hexToRgb = (hex) => {
 };
 
 // helper function to calculate luminance
+// uses WCAG guides for formula 
 const getLuminance = ({ r, g, b }) => {
   // linearizing the values for r,g,b
   const linearize = (channel) =>
@@ -21,11 +23,11 @@ const getLuminance = ({ r, g, b }) => {
   const gLin = linearize(g / 255);
   const bLin = linearize(b / 255);
 
-  // applying a formula obtained from WCAG guides to determine luminance
   return 0.2126 * rLin + 0.7152 * gLin + 0.0722 * bLin;
 };
 
-// calculate contrast ratio
+// helper function to calculate contrast ratio
+// uses WCAG guides for formula
 const getContrastRatio = (hex1, hex2) => {
   const lum1 = getLuminance(hexToRgb(hex1));
   const lum2 = getLuminance(hexToRgb(hex2));
@@ -45,7 +47,7 @@ const App = () => {
   const [colorBlindSim, setColorBlindSim] = useState('none'); // none, deuteranomaly, protanomaly, tritanomaly, monochromacy
   const [severity, setSeverity] = useState(50); // severity of color blindness, default for slider is 50%
   const [contrastRatio, setContrastRatio] = useState(null); // store contrast ratio, starting as null
-  const [requiredContrast, setRequiredContrast] = useState(4.5); // required contrast for normal text (WCAG defines as 4.5:1 for normal text)
+  const [requiredContrast, setRequiredContrast] = useState(4.5); // holds min value to pass, WCAG defines required contrast for normal text as 4.5:1
   const [customText, setCustomText] = useState('This is a preview text'); // user-provided preview text, default text given
 
   // ref for live preview box
@@ -61,7 +63,7 @@ const App = () => {
       setRequiredContrast(4.5);
     }
     else if (textType === 'large' || textType === 'heading') {
-      setRequiredContrast(3.0); // WCAG requires lower contrast for large text, buttons, and headings
+      setRequiredContrast(3.0); // WCAG requires lower contrast for large text and headings
     }
   }, [color1, color2, textType]);
 
@@ -178,7 +180,10 @@ const App = () => {
               aria-label="Select background color"
             />
           </div>
+
+          {/* Button to swap text and background colors */}
           <button id={"swap-button"} onClick={swapColors}>Swap Text and Background</button>
+
           {/* Dropdown to select text type */}
           <div className="form-row">
             <div className="form-group">
@@ -239,7 +244,7 @@ const App = () => {
             />
           </div>
 
-          {/* Allow for resetting settings*/}
+          {/* Button to reset settings*/}
           <div className="form-group">
             <button id="reset-button" onClick={resetDefaults}>Reset</button>
           </div>
@@ -265,7 +270,7 @@ const App = () => {
             <small>{`    ${customText.length}/60 characters`}</small> {/* Display character count */}
           </div>
 
-          {/* Allow for copying palette hex codes */}
+          {/* Button to copy palette hex codes */}
           <div className='form-group'>
             <button id="copy-button" onClick={copyHexCodes}>Copy Hex Codes</button>
           </div>
