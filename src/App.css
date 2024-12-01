@@ -29,13 +29,6 @@ main {
     justify-content: space-between;
 }
 
-/* ensure the flex container's children stretch to equal height */
-main > section {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-}
-
 /* adjust layout for smaller screens */
 @media (max-width: 768px) {
     main {
@@ -252,6 +245,7 @@ input[type="range"]::-moz-range-thumb {
     padding: 2rem;
     font-size: 1.3rem;
     flex: 1;
+    max-height: 200px;
     text-align: center;
     color: #000000;
     background-color: #fff;
@@ -297,7 +291,7 @@ input[type="range"]::-moz-range-thumb {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
