@@ -134,7 +134,7 @@ const App = () => {
 
   // copy hex codes to clipboard
   const copyHexCodes = () => {
-    const textToCopy = `Color 1: ${color1}, Color 2: ${color2}`; // format for copying
+    const textToCopy = `Text Color: ${color1}, Background Color: ${color2}`; // format for copying
     navigator.clipboard.writeText(textToCopy).then(() => {
       alert('Hex codes copied to clipboard!'); // send an alert on the device itself
     }).catch(err => {
