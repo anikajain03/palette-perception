@@ -30,10 +30,10 @@
 ## Usage
 
 - **Choose Colors**  
-  Use the color pickers to select text and background colors.
+  Use the color pickers or the pre-defined palette options to select text and background colors.
   
 - **Evaluate Contrast**  
-  As you change colors via the color pickers, the contrast ratio and corresponding status updates automatically. Modify the text type via the dropdown to test different accessibility thresholds.
+  As you change the text and background colors, the contrast ratio and corresponding status updates automatically. Modify the text type via the dropdown to test different accessibility thresholds.
 
 - **Simulate Color Blindness**  
   Select a color blindness type from the dropdown, and adjust the severity using the slider.
