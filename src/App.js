@@ -53,6 +53,15 @@ const App = () => {
   // ref for live preview box
   const previewBoxRef = useRef(null);
 
+  // set of WCAG-compliant predefined palettes
+  const presetPalettes = [
+    { name: 'Ocean Breeze', colors: ['#A8DADC', '#1D3557'] },  // Dark blue and teal
+    { name: 'Sunset Glow', colors: ['#FFDB4D', '#A93319'] },    // Dark oranges and bright yellow
+    { name: 'Misty Forest', colors: ['#EDEDED', '#005223'] },   // Dark Green + Light gray
+    { name: 'Purple Haze', colors: ['#FFF0FC', '#8E44AD'] }   // Purple + light pink
+  ];
+  
+
   // update contrast ratio and required contrast based on user input
   useEffect(() => {
     const contrast = getContrastRatio(color1, color2);
@@ -152,6 +161,11 @@ const App = () => {
     });
   };
 
+  // update colors according to selected palette
+  const selectPalette = (palette) => {
+    setColor1(palette.colors[0]);
+    setColor2(palette.colors[1]);
+  };  
 
   // HTML code defining structure of the app
   return (
@@ -183,6 +197,22 @@ const App = () => {
 
           {/* Button to swap text and background colors */}
           <button id={"swap-button"} onClick={swapColors}>Swap Text and Background</button>
+
+          {/* Selectors for predefined palette options */}
+          <div className="palette-container">
+            <label htmlFor="preset-palettes">Choose a Palette: </label>
+            <div className="palette-buttons">
+              {presetPalettes.map((palette) => (
+                <button
+                  key={palette.name}
+                  onClick={() => selectPalette(palette)}
+                  style={{color: palette.colors[0], backgroundColor: palette.colors[1]}}
+                >
+                  {palette.name}
+                </button>
+              ))}
+            </div>
+          </div>
 
           {/* Dropdown to select text type */}
           <div className="form-row">
@@ -244,10 +274,6 @@ const App = () => {
             />
           </div>
 
-          {/* Button to reset settings*/}
-          <div className="form-group">
-            <button id="reset-button" onClick={resetDefaults}>Reset</button>
-          </div>
         </section>
 
         <section className="preview-section">
@@ -273,6 +299,11 @@ const App = () => {
           {/* Button to copy palette hex codes */}
           <div className='form-group'>
             <button id="copy-button" onClick={copyHexCodes}>Copy Hex Codes</button>
+          </div>
+
+          {/* Button to reset settings*/}
+          <div className="form-group">
+            <button id="reset-button" onClick={resetDefaults}>Reset</button>
           </div>
         </section>
       </main>
