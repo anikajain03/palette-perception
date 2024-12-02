@@ -2,64 +2,64 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* ensures that padding and border are included in element's total width/height */
 }
 
 /* body styling */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f8f9fa;
-    color: #000000;
-    line-height: 1.6;
+    color: #000000; /* black text color for readability */
+    line-height: 1.6; /* increase line height for better text spacing */
     display: flex;
-    justify-content: center; 
-    align-items: flex-start;
-    height: 100vh;
-    padding: 1rem;
+    justify-content: center; /* center content horizontally */
+    align-items: flex-start; /* align content at the top of the page */
+    height: 100vh; /* make body take full viewport height */
+    padding: 1rem; /* add padding around the content */
 }
 
 /* main content styling */
 main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* creates two equal columns */
     gap: 2rem;
-    width: 100%;
+    width: 100%; /* fill up the horizontal space */
     max-width: 1200px;
     margin: 2rem 0;
-    justify-content: space-between;
+    justify-content: space-between; /* distributes space between content evenly */
 }
 
 /* adjust layout for smaller screens */
 @media (max-width: 768px) {
     main {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* stacks content in one column on smaller screens */
     }
 }
 
 /* header section */
 h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #082b52;
+    font-size: 2rem; /* large font size */
+    font-weight: bold; 
+    color: #082b52; /* dark blue color, used as a theme throughout the site */
     text-align: center;
     margin-bottom: 2rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-family: 'Roboto', sans-serif;
-    padding: 2rem;
+    padding: 2rem; /* add padding around the heading */
     background-color: #ffffff;
-    border-radius: 12px;
-    border: 2px solid #dadada;
+    border-radius: 12px; /* rounded corners */
+    border: 2px solid #dadada; /* light border color, used for nonclickable elements */
 }
 
 /* color picker section */
 .color-picker {
     display: flex;
     flex: 1;
-    justify-content: center;
+    justify-content: center; 
     align-items: center;
     margin-bottom: 1.5rem;
-    gap: 1.5rem;
+    gap: 1.5rem; /* space between elements */
     padding: 1.5rem;
     background-color: #ffffff;
     border-radius: 12px;
@@ -69,18 +69,18 @@ h1 {
 /* color picker label styling */
 .color-picker label {
     display: flex;
-    align-items: center;
+    align-items: center; /* aligns label and input elements */
     font-size: 1.1rem;
 }
 
 /* color picker input styling */
 input[type="color"] {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
+    width: 50px; /* fixed width of the color selector */
+    height: 50px; /* fixed height of the color selector */
+    border-radius: 50%; /* makes the input a circle */
+    cursor: pointer; /* pointer cursor on hover */
     background-color: transparent;
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out; /* smooth transition for color change */
     border: 2px solid #dadada;
 }
 
@@ -101,39 +101,38 @@ input[type="color"]::-webkit-color-swatch {
     padding: 1rem;
     font-size: 1rem;
     text-align: center;
-    color: #fff;
-    background-color: #082b52;
+    color: #fff; /* white text */
+    background-color: #082b52; /* theme blue */
     border: none;
     border-radius: 8px;
     cursor: pointer;
     margin-bottom: 1.5rem;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* soft shadow for 3D effect */
 }
 
 #swap-button:hover {
-    opacity: 0.8;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    opacity: 0.8; /* slightly fade button on hover */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* keep shadow effect */
 }
 
 /* palette container styling */
 .palette-container {
     display: flex;
-    justify-content: flex-start;
-    align-items: left;
+    justify-content: flex-start; /* aligns palette buttons to the left */
+    align-items: left; /* aligns items to the top */
     margin-bottom: 1rem;
     padding: 1rem;
     background-color: #ffffff;
     border-radius: 12px;
     border: 2px solid #dadada;
-
 }
 
 /* palette button styling */
 .palette-buttons {
     display: flex;
-    gap: 0.5rem;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
+    gap: 0.5rem; /* space between buttons */
+    justify-content: flex-start; /* align buttons to the left */
+    flex-wrap: nowrap; /* prevent buttons from wrapping to the next line */
 }
 
 .palette-buttons button {
@@ -143,32 +142,32 @@ input[type="color"]::-webkit-color-swatch {
     border-radius: 8px;
     cursor: pointer;
     font-size: 1rem;
-    padding: 0.5rem;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 0.5rem; /* padding inside the button */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* soft shadow for 3D effect */
+    transition: background-color 0.3s ease, color 0.3s ease; /* smooth transition for background and color */
 }
 
 .palette-buttons button:hover {
-    opacity: 0.8;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    opacity: 0.8; /* slight fade on hover */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* keep shadow effect */
 }
 
-/* dropdown styling */
+/* dropdown and input styling */
 select,
 input[type="range"] {
-    width: 100%;
+    width: 100%; /* fill container width */
     padding: 1rem;
     font-size: 1rem;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #ffffff;
-    transition: border-color 0.2s;
-    margin-bottom: 1rem;
+    transition: border-color 0.2s; /* smooth border color transition */
+    margin-bottom: 1rem; /* add space below */
 }
 
-/* section for contrast ratio display */
+/* contrast ratio display styling */
 #contrast-ratio {
-    font-size: 1.2rem;
+    font-size: 1.2rem; 
     margin-top: 0.5rem;
     margin-bottom: 1rem;
     text-align: center;
@@ -179,12 +178,12 @@ input[type="range"] {
 }
 
 #contrast-ratio .pass-fail {
-    font-weight: bold;
+    font-weight: bold; /* pass/fail text should be bold to draw attention */
     display: block;
-    margin-top: 0.5rem;
+    margin-top: 0.5rem; 
 }
 
-/* display as green if passing and red if not */
+/* green for passing contrast ratio, red for failing */
 #contrast-ratio .pass-fail.pass {
     color: green;
 }
@@ -193,7 +192,7 @@ input[type="range"] {
     color: red;
 }
 
-/* severity section */
+/* severity section styling */
 .severity-container {
     display: flex;
     align-items: center;
@@ -203,57 +202,58 @@ input[type="range"] {
     border-radius: 12px;
 }
 
+/* severity slider styling */
 input[type="range"] {
     width: 100%;
-    height: 8px;
-    border-radius: 5px;
-    background: #ddd;
+    height: 8px; /* fixed height for slider */
+    border-radius: 5px; /* rounded corners for the slider track */
+    background: #ddd; /* light gray track color */
     outline: none;
 }
 
-/* severity slider section */
+/* slider thumb (handle) styling */
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #4A90E2;
+    width: 20px; /* fixed width */
+    height: 20px; /* fixed height */
+    border-radius: 50%; /* makes the thumb round */
+    background: #4A90E2; /* blue thumb color */
     cursor: pointer;
 }
 
+/* for Firefox */
 input[type="range"]::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #4A90E2;
+    width: 20px; /* fixed width */
+    height: 20px; /* fixed height */
+    border-radius: 50%; /* makes the thumb round */
+    background: #4A90E2; /* blue thumb color */
     cursor: pointer;
 }
 
 /* custom text input styling */
 #customText {
-    width: 100%;
+    width: 100%; 
     padding: 1rem;
     font-size: 1rem;
     border: 1px solid #ddd;
     border-radius: 8px;
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* smooth transition for all properties */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* soft shadow */
 }
 
-/* live preview styling */
+/* live preview box styling */
 #previewBox {
     padding: 2rem;
     font-size: 1.3rem;
     flex: 1;
     max-height: 200px;
     text-align: center;
-    color: #000000;
+    color: #000000; /* default black text, should be replaced by JS code */
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 1px solid #ddd; /* border for nonclickable */
     border-radius: 12px;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; /* smooth transition for all properties */
     margin-bottom: 1rem;
-    border: 2px solid #dadada;
 }
 
 /* copy hex codes button styling */
@@ -265,17 +265,17 @@ input[type="range"]::-moz-range-thumb {
     font-size: 1rem;
     text-align: center;
     color: #fff;
-    background-color: #082b52;
+    background-color: #082b52; /* blue theme */
     border: none;
     border-radius: 8px;
     cursor: pointer;
     margin-top: 1rem;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* soft shadow */
 }
 
 #copy-button:hover {
-    opacity: 0.8;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    opacity: 0.8; /* slight fade on hover */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* keep shadow effect */
 }
 
 /* reset button styling */
@@ -287,38 +287,39 @@ input[type="range"]::-moz-range-thumb {
     font-size: 1rem;
     text-align: center;
     color: #fff;
-    background-color: #082b52;
+    background-color: #082b52; /* blue theme */
     border: none;
     border-radius: 8px;
     cursor: pointer;
     margin-top: 1rem;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* soft shadow */
 }
 
 #reset-button:hover {
-    opacity: 0.8;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    opacity: 0.8; /* slight fade on hover */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* keep shadow effect */
 }
 
-/* media query for responsiveness */
+/* media query for responsiveness on smaller screens */
 @media (max-width: 768px) {
     header {
-        font-size: 1.8rem;
-        padding: 1.5rem;
+        font-size: 1.8rem; /* smaller font size for smaller screens */
+        padding: 1.5rem; /* adjust padding */
     }
 
+    /* smaller color input on mobile */
     input[type="color"] {
         width: 40px;
         height: 40px;
     }
 
     .severity-container {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: column; /* stack the severity controls vertically */
+        align-items: flex-start; /* align items to the left */
     }
 
     #customText {
-        padding: 0.8rem;
-        font-size: 1rem;
+        padding: 0.8rem; /* reduce padding */
+        font-size: 1rem; /* font size adjustment */
     }
 }

@@ -41,14 +41,14 @@ const getContrastRatio = (hex1, hex2) => {
 
 const App = () => {
   // define states
-  const [color1, setColor1] = useState('#000000'); // default for color1 is black
-  const [color2, setColor2] = useState('#ffffff'); // default for color2 is white
-  const [textType, setTextType] = useState('normal'); // normal, large, heading
-  const [colorBlindSim, setColorBlindSim] = useState('none'); // none, deuteranomaly, protanomaly, tritanomaly, monochromacy
-  const [severity, setSeverity] = useState(50); // severity of color blindness, default for slider is 50%
-  const [contrastRatio, setContrastRatio] = useState(null); // store contrast ratio, starting as null
-  const [requiredContrast, setRequiredContrast] = useState(4.5); // holds min value to pass, WCAG defines required contrast for normal text as 4.5:1
-  const [customText, setCustomText] = useState('This is a preview text'); // user-provided preview text, default text given
+  const [color1, setColor1] = useState('#000000'); // store text color (default is black)
+  const [color2, setColor2] = useState('#ffffff'); // store background color (default is white)
+  const [textType, setTextType] = useState('normal'); // store selected text type (default is normal, which is the smallest option)
+  const [colorBlindSim, setColorBlindSim] = useState('none'); // store selected color blindness type (default is none)
+  const [severity, setSeverity] = useState(50); // store severity of color blindness aka slider value (default is 50%)
+  const [contrastRatio, setContrastRatio] = useState(null); // store contrast ratio (default is null)
+  const [requiredContrast, setRequiredContrast] = useState(4.5); // store min value to pass WCAG requirements (default is specs for normal text, 4.5:1)
+  const [customText, setCustomText] = useState('This is a preview text'); // store user-provided preview text (default is the shown text)
 
   // ref for live preview box
   const previewBoxRef = useRef(null);
@@ -56,8 +56,8 @@ const App = () => {
   // set of WCAG-compliant predefined palettes
   const presetPalettes = [
     { name: 'Ocean Breeze', colors: ['#A8DADC', '#1D3557'] },  // Dark blue and teal
-    { name: 'Sunset Glow', colors: ['#FFDB4D', '#A93319'] },    // Dark oranges and bright yellow
-    { name: 'Misty Forest', colors: ['#EDEDED', '#005223'] },   // Dark Green + Light gray
+    { name: 'Sunset Glow', colors: ['#FFDB4D', '#A93319'] },    // Dark orange and bright yellow
+    { name: 'Misty Forest', colors: ['#EDEDED', '#005223'] },   // Dark green + Light gray
     { name: 'Purple Haze', colors: ['#FFF0FC', '#8E44AD'] }   // Purple + light pink
   ];
   
@@ -78,8 +78,8 @@ const App = () => {
 
   // update live preview based on current settings
   const updateLivePreview = () => {
-    const previewBox = previewBoxRef.current;
-    const filterValue = severity / 100; // adjust filter strength based on severity
+    const previewBox = previewBoxRef.current; // access the preview box element
+    const filterValue = severity / 100; // adjust filter strength based on selected severity
 
     let filterStyle = '';
     let fontSize = '16px'; // default font size for normal text
@@ -156,7 +156,7 @@ const App = () => {
   const swapColors = () => {
     setColor1((prevColor1) => {
       const temp = color2;
-      setColor2(prevColor1);
+      setColor2(prevColor1); // swap background with text color
       return temp;
     });
   };
